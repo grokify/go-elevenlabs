@@ -1,0 +1,70 @@
+{
+  "title": "Introduction to the ADK",
+  "description": "A multilingual presentation about the Agent Development Kit",
+  "default_language": "en",
+  "default_voices": {
+    "en": "21m00Tcm4TlvDq8ikWAM",
+    "es": "EXAVITQu4vr4xnSDxMaL"
+  },
+  "pronunciations": {
+    "ADK": {
+      "en": "A D K",
+      "es": "A D K"
+    },
+    "API": {
+      "en": "A P I",
+      "es": "A P I"
+    },
+    "SDK": {
+      "en": "S D K",
+      "es": "S D K"
+    }
+  },
+  "slides": [
+    {
+      "title": "Welcome",
+      "segments": [
+        {
+          "text": {
+            "en": "Welcome to the ADK course.",
+            "es": "Bienvenidos al curso de ADK."
+          },
+          "pause_after": "500ms"
+        },
+        {
+          "text": {
+            "en": "Today we'll learn how to build AI agents using the Agent Development Kit.",
+            "es": "Hoy aprenderemos cómo construir agentes de IA usando el Agent Development Kit."
+          },
+          "pause_after": "800ms"
+        }
+      ]
+    },
+    {
+      "title": "What is ADK?",
+      "segments": [
+        {
+          "text": {
+            "en": "The ADK is a powerful SDK for building conversational AI agents.",
+            "es": "El ADK es un SDK poderoso para construir agentes de IA conversacionales."
+          },
+          "pause_after": "500ms"
+        },
+        {
+          "text": {
+            "en": "It provides a simple API for common tasks.",
+            "es": "Proporciona una API simple para tareas comunes."
+          },
+          "pause_after": "500ms"
+        },
+        {
+          "text": {
+            "en": "Let's dive in!",
+            "es": "¡Comencemos!"
+          },
+          "emphasis": "strong"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,387 @@
+{
+  "description": "ElevenLabs Pre-made Voices Reference",
+  "note": "Voice IDs and availability may change. Use the API for authoritative data.",
+  "last_updated": "2025-01",
+  "voices": [
+    {
+      "id": "21m00Tcm4TlvDq8ikWAM",
+      "name": "Rachel",
+      "description": "Calm and composed",
+      "gender": "female",
+      "age": "young",
+      "accent": "American",
+      "use_case": "Narration, audiobooks",
+      "category": "premade"
+    },
+    {
+      "id": "AZnzlk1XvdvUeBnXmlld",
+      "name": "Domi",
+      "description": "Strong and confident",
+      "gender": "female",
+      "age": "young",
+      "accent": "American",
+      "use_case": "Presentations, announcements",
+      "category": "premade"
+    },
+    {
+      "id": "EXAVITQu4vr4xnSDxMaL",
+      "name": "Bella",
+      "description": "Soft and warm",
+      "gender": "female",
+      "age": "young",
+      "accent": "American",
+      "use_case": "Podcasts, friendly content",
+      "category": "premade"
+    },
+    {
+      "id": "ErXwobaYiN019PkySvjV",
+      "name": "Antoni",
+      "description": "Well-rounded and professional",
+      "gender": "male",
+      "age": "young",
+      "accent": "American",
+      "use_case": "Business, education",
+      "category": "premade"
+    },
+    {
+      "id": "MF3mGyEYCl7XYWbV9V6O",
+      "name": "Elli",
+      "description": "Emotional and expressive",
+      "gender": "female",
+      "age": "young",
+      "accent": "American",
+      "use_case": "Storytelling, drama",
+      "category": "premade"
+    },
+    {
+      "id": "TxGEqnHWrfWFTfGW9XjX",
+      "name": "Josh",
+      "description": "Deep and authoritative",
+      "gender": "male",
+      "age": "young",
+      "accent": "American",
+      "use_case": "Documentaries, news",
+      "category": "premade"
+    },
+    {
+      "id": "VR6AewLTigWG4xSOukaG",
+      "name": "Arnold",
+      "description": "Crisp and confident",
+      "gender": "male",
+      "age": "middle-aged",
+      "accent": "American",
+      "use_case": "Narration, commercials",
+      "category": "premade"
+    },
+    {
+      "id": "pNInz6obpgDQGcFmaJgB",
+      "name": "Adam",
+      "description": "Deep and warm",
+      "gender": "male",
+      "age": "middle-aged",
+      "accent": "American",
+      "use_case": "Audiobooks, meditation",
+      "category": "premade"
+    },
+    {
+      "id": "yoZ06aMxZJJ28mfd3POQ",
+      "name": "Sam",
+      "description": "Raspy and casual",
+      "gender": "male",
+      "age": "young",
+      "accent": "American",
+      "use_case": "Casual content, vlogs",
+      "category": "premade"
+    },
+    {
+      "id": "piTKgcLEGmPE4e6mEKli",
+      "name": "Nicole",
+      "description": "Soft and whispery",
+      "gender": "female",
+      "age": "young",
+      "accent": "American",
+      "use_case": "ASMR, intimate content",
+      "category": "premade"
+    },
+    {
+      "id": "z9fAnlkpzviPz146aGWa",
+      "name": "Glinda",
+      "description": "Theatrical witch-like",
+      "gender": "female",
+      "age": "middle-aged",
+      "accent": "American",
+      "use_case": "Character voices, fantasy",
+      "category": "premade"
+    },
+    {
+      "id": "2EiwWnXFnvU5JabPnv8n",
+      "name": "Clyde",
+      "description": "Gruff war veteran",
+      "gender": "male",
+      "age": "middle-aged",
+      "accent": "American",
+      "use_case": "Character voices, gaming",
+      "category": "premade"
+    },
+    {
+      "id": "CYw3kZ02Hs0563khs1Fj",
+      "name": "Dave",
+      "description": "Conversational British-Essex",
+      "gender": "male",
+      "age": "young",
+      "accent": "British",
+      "use_case": "Casual content, tutorials",
+      "category": "premade"
+    },
+    {
+      "id": "D38z5RcWu1voky8WS1ja",
+      "name": "Fin",
+      "description": "Weathered Irish sailor",
+      "gender": "male",
+      "age": "old",
+      "accent": "Irish",
+      "use_case": "Character voices, storytelling",
+      "category": "premade"
+    },
+    {
+      "id": "XB0fDUnXU5powFXDhCwa",
+      "name": "Charlotte",
+      "description": "Seductive and sophisticated",
+      "gender": "female",
+      "age": "middle-aged",
+      "accent": "Swedish",
+      "use_case": "Luxury brands, dramatic content",
+      "category": "premade"
+    },
+    {
+      "id": "N2lVS1w4EtoT3dr4eOWO",
+      "name": "Callum",
+      "description": "Intense and dramatic",
+      "gender": "male",
+      "age": "middle-aged",
+      "accent": "Transatlantic",
+      "use_case": "Trailers, dramatic narration",
+      "category": "premade"
+    },
+    {
+      "id": "XrExE9yKIg1WjnnlVkGX",
+      "name": "Matilda",
+      "description": "Warm and friendly",
+      "gender": "female",
+      "age": "middle-aged",
+      "accent": "American",
+      "use_case": "Customer service, education",
+      "category": "premade"
+    },
+    {
+      "id": "oWAxZDx7w5VEj9dCyTzz",
+      "name": "Grace",
+      "description": "Southern and sweet",
+      "gender": "female",
+      "age": "young",
+      "accent": "American Southern",
+      "use_case": "Friendly content, hospitality",
+      "category": "premade"
+    },
+    {
+      "id": "pFZP5JQG7iQjIQuC4Bku",
+      "name": "Lily",
+      "description": "Raspy British",
+      "gender": "female",
+      "age": "middle-aged",
+      "accent": "British",
+      "use_case": "Character voices, audiobooks",
+      "category": "premade"
+    },
+    {
+      "id": "pMsXgVXv3BLzUgSXRplE",
+      "name": "Serena",
+      "description": "Pleasant and calm",
+      "gender": "female",
+      "age": "middle-aged",
+      "accent": "American",
+      "use_case": "Corporate, meditation",
+      "category": "premade"
+    },
+    {
+      "id": "flq6f7yk4E4fJM5XTYuZ",
+      "name": "Michael",
+      "description": "Wise and grandfatherly",
+      "gender": "male",
+      "age": "old",
+      "accent": "American",
+      "use_case": "Storytelling, wisdom content",
+      "category": "premade"
+    },
+    {
+      "id": "LcfcDJNUP1GQjkzn1xUU",
+      "name": "Emily",
+      "description": "Calm and professional",
+      "gender": "female",
+      "age": "young",
+      "accent": "American",
+      "use_case": "News, professional content",
+      "category": "premade"
+    },
+    {
+      "id": "g5CIjZEefAph4nQFvHAz",
+      "name": "Ethan",
+      "description": "Energetic and youthful",
+      "gender": "male",
+      "age": "young",
+      "accent": "American",
+      "use_case": "Gaming, youth content",
+      "category": "premade"
+    },
+    {
+      "id": "nPczCjzI2devNBz1zQrb",
+      "name": "Brian",
+      "description": "Deep narrator quality",
+      "gender": "male",
+      "age": "middle-aged",
+      "accent": "American",
+      "use_case": "Documentaries, audiobooks",
+      "category": "premade"
+    },
+    {
+      "id": "JBFqnCBsd6RMkjVDRZzb",
+      "name": "George",
+      "description": "Warm and refined British",
+      "gender": "male",
+      "age": "middle-aged",
+      "accent": "British",
+      "use_case": "Narration, sophisticated content",
+      "category": "premade"
+    },
+    {
+      "id": "jBpfuIE2acCO8z3wKNLl",
+      "name": "Gigi",
+      "description": "Childlike and playful",
+      "gender": "female",
+      "age": "young",
+      "accent": "American",
+      "use_case": "Children's content, animation",
+      "category": "premade"
+    },
+    {
+      "id": "jsCqWAovK2LkecY7zXl4",
+      "name": "Freya",
+      "description": "Expressive and clear",
+      "gender": "female",
+      "age": "young",
+      "accent": "American",
+      "use_case": "Storytelling, presentations",
+      "category": "premade"
+    },
+    {
+      "id": "SOYHLrjzK2X1ezoPC6cr",
+      "name": "Harry",
+      "description": "Anxious energy",
+      "gender": "male",
+      "age": "young",
+      "accent": "American",
+      "use_case": "Character voices, comedy",
+      "category": "premade"
+    },
+    {
+      "id": "bVMeCyTHy58xNoL34h3p",
+      "name": "Jeremy",
+      "description": "Conversational and natural",
+      "gender": "male",
+      "age": "young",
+      "accent": "American",
+      "use_case": "Podcasts, casual content",
+      "category": "premade"
+    },
+    {
+      "id": "Zlb1dXrM653N07WRdFW3",
+      "name": "Joseph",
+      "description": "Authoritative British",
+      "gender": "male",
+      "age": "middle-aged",
+      "accent": "British",
+      "use_case": "Documentaries, formal content",
+      "category": "premade"
+    },
+    {
+      "id": "t0jbNlBVZ17f02VDIeMI",
+      "name": "Jessie",
+      "description": "Raspy and weathered",
+      "gender": "male",
+      "age": "old",
+      "accent": "American",
+      "use_case": "Character voices, westerns",
+      "category": "premade"
+    },
+    {
+      "id": "29vD33N1CtxCmqQRPOHJ",
+      "name": "Drew",
+      "description": "Well-rounded and versatile",
+      "gender": "male",
+      "age": "middle-aged",
+      "accent": "American",
+      "use_case": "General purpose, narration",
+      "category": "premade"
+    },
+    {
+      "id": "5Q0t7uMcjvnagumLfvZi",
+      "name": "Paul",
+      "description": "Professional reporter style",
+      "gender": "male",
+      "age": "middle-aged",
+      "accent": "American",
+      "use_case": "News, journalism",
+      "category": "premade"
+    },
+    {
+      "id": "SAz9YHcvj6GT2YYXdXww",
+      "name": "River",
+      "description": "Modern and inclusive",
+      "gender": "non-binary",
+      "age": "young",
+      "accent": "American",
+      "use_case": "Modern content, inclusive brands",
+      "category": "premade"
+    },
+    {
+      "id": "ThT5KcBeYPX3keUQqHPh",
+      "name": "Dorothy",
+      "description": "Pleasant and refined British",
+      "gender": "female",
+      "age": "young",
+      "accent": "British",
+      "use_case": "Narration, elegant content",
+      "category": "premade"
+    },
+    {
+      "id": "iP95p4xoKVk53GoZ742B",
+      "name": "Chris",
+      "description": "Casual and relaxed",
+      "gender": "male",
+      "age": "middle-aged",
+      "accent": "American",
+      "use_case": "Casual content, tutorials",
+      "category": "premade"
+    },
+    {
+      "id": "TX3LPaxmHKxFdv7VOQHJ",
+      "name": "Liam",
+      "description": "Articulate and clear",
+      "gender": "male",
+      "age": "young",
+      "accent": "American",
+      "use_case": "Education, presentations",
+      "category": "premade"
+    },
+    {
+      "id": "ZQe5CZNOzWyzPSCn5a3c",
+      "name": "James",
+      "description": "Warm Australian",
+      "gender": "male",
+      "age": "old",
+      "accent": "Australian",
+      "use_case": "Narration, travel content",
+      "category": "premade"
+    }
+  ]
+}

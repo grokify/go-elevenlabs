@@ -1,0 +1,88 @@
+site_name: go-elevenlabs
+site_description: Go SDK for ElevenLabs Text-to-Speech API
+site_author: Grokify
+site_url: https://grokify.github.io/go-elevenlabs/
+
+repo_name: grokify/go-elevenlabs
+repo_url: https://github.com/grokify/go-elevenlabs
+
+docs_dir: docs
+site_dir: ../docs
+
+theme:
+  name: material
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - content.code.annotate
+
+plugins:
+  - search
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - admonition
+  - pymdownx.details
+  - tables
+  - toc:
+      permalink: true
+
+nav:
+  - Home: index.md
+  - Getting Started:
+    - Installation: getting-started/installation.md
+    - Quick Start: getting-started/quickstart.md
+    - Configuration: getting-started/configuration.md
+  - Services:
+    - Text-to-Speech: services/text-to-speech.md
+    - Speech-to-Text: services/speech-to-text.md
+    - Voices: services/voices.md
+    - Voice Design: services/voice-design.md
+    - Sound Effects: services/sound-effects.md
+    - Music: services/music.md
+    - Audio Isolation: services/audio-isolation.md
+    - Forced Alignment: services/forced-alignment.md
+    - Text-to-Dialogue: services/text-to-dialogue.md
+    - Projects (Studio): services/projects.md
+    - Pronunciation: services/pronunciation.md
+    - Dubbing: services/dubbing.md
+    - History: services/history.md
+    - Models: services/models.md
+    - User: services/user.md
+  - Guides:
+    - LMS/Udemy Courses: guides/lms-courses.md
+    - Pronunciation Rules: guides/pronunciation-rules.md
+    - TTS Script Authoring: guides/ttsscript.md
+  - Utilities:
+    - Voice Reference: utilities/voices.md
+    - TTS Script Package: utilities/ttsscript.md
+    - Retry HTTP Transport: utilities/retryhttp.md
+  - API Reference:
+    - Client: api/client.md
+    - Errors: api/errors.md
+    - Coverage: api/coverage.md
+  - Examples: examples.md
