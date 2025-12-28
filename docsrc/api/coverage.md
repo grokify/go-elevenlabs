@@ -10,7 +10,10 @@ This page documents the ElevenLabs API coverage in this Go SDK.
 | Category | API Methods | SDK Coverage |
 |----------|-------------|--------------|
 | Text-to-Speech | 4 | ✓ Full |
+| WebSocket TTS | 1 | ✓ Full |
 | Speech-to-Text | 2 | ✓ Full |
+| WebSocket STT | 1 | ✓ Full |
+| Speech-to-Speech | 2 | ✓ Full |
 | Voices | 9 | ✓ Full |
 | Models | 1 | ✓ Full |
 | History | 5 | ✓ Full |
@@ -24,12 +27,11 @@ This page documents the ElevenLabs API coverage in this Go SDK.
 | Pronunciation | 6 | ✓ Full |
 | Projects (Studio) | 14 | ✓ Partial |
 | Dubbing | 14 | ✓ Partial |
-| Speech-to-Speech | 2 | ✗ Not covered |
+| Phone / Twilio | 7 | ✓ Partial |
 | Professional Voice Cloning | 12 | ✗ Not covered |
 | Voice Library | 5 | ✗ Not covered |
 | Conversational AI | 26 | ✗ Not covered |
 | Knowledge Base / RAG | 15 | ✗ Not covered |
-| Phone / Communication | 13 | ✗ Not covered |
 | Workspace Management | 20 | ✗ Not covered |
 | MCP / Tools | 5 | ✗ Not covered |
 | Audio Native | 3 | ✗ Not covered |
@@ -51,6 +53,21 @@ Full coverage of text-to-speech functionality.
 | `TextToSpeechFullWithTimestamps` | ✓ `TextToSpeech().GenerateWithTimestamps()` |
 | `TextToSpeechStreamWithTimestamps` | ✓ `TextToSpeech().GenerateStreamWithTimestamps()` |
 
+### WebSocket TTS (1 method) ✓
+
+Real-time text-to-speech streaming via WebSocket for low-latency voice synthesis.
+
+| Method | SDK Support |
+|--------|-------------|
+| `TextToSpeechWebSocket` | ✓ `WebSocketTTS().Connect()` |
+
+**Key Features:**
+
+- Stream text to speech in real-time (ideal for LLM output)
+- Low-latency audio generation with configurable optimization
+- Word-level timing alignment
+- SSML parsing support
+
 ### Speech-to-Text (2 methods) ✓
 
 Full coverage of transcription functionality.
@@ -59,6 +76,37 @@ Full coverage of transcription functionality.
 |--------|-------------|
 | `SpeechToText` | ✓ `SpeechToText().Transcribe()` |
 | `Transcribe` | ✓ `SpeechToText().TranscribeURL()` |
+
+### WebSocket STT (1 method) ✓
+
+Real-time speech-to-text streaming via WebSocket for live transcription.
+
+| Method | SDK Support |
+|--------|-------------|
+| `SpeechToTextWebSocket` | ✓ `WebSocketSTT().Connect()` |
+
+**Key Features:**
+
+- Stream audio for real-time transcription
+- Partial (interim) results for responsive UIs
+- Word-level timing with confidence scores
+- Automatic language detection
+
+### Speech-to-Speech (2 methods) ✓
+
+Voice conversion - transform speech from one voice to another.
+
+| Method | SDK Support |
+|--------|-------------|
+| `SpeechToSpeechFull` | ✓ `SpeechToSpeech().Convert()` |
+| `SpeechToSpeechStream` | ✓ `SpeechToSpeech().ConvertStream()` |
+
+**Key Features:**
+
+- Convert voice while preserving speech content
+- Background noise removal option
+- Seed audio for consistent conversions
+- Configurable voice settings
 
 ### Voices (9 methods) ✓
 
@@ -205,18 +253,30 @@ Full coverage of pronunciation dictionary management.
 | `UpdateSegmentLanguage` | ✗ Not covered |
 | `MigrateSegments` | ✗ Not covered |
 
+### Phone / Twilio (7 methods) - Partial ✓
+
+Phone call and Twilio integration for conversational AI agents.
+
+| Method | SDK Support |
+|--------|-------------|
+| `RegisterTwilioCall` | ✓ `Twilio().RegisterCall()` |
+| `HandleTwilioOutboundCall` | ✓ `Twilio().OutboundCall()` |
+| `HandleSipTrunkOutboundCall` | ✓ `Twilio().SIPOutboundCall()` |
+| `ListPhoneNumbersRoute` | ✓ `PhoneNumbers().List()` |
+| `GetPhoneNumberRoute` | ✓ `PhoneNumbers().Get()` |
+| `UpdatePhoneNumberRoute` | ✓ `PhoneNumbers().Update()` |
+| `DeletePhoneNumberRoute` | ✓ `PhoneNumbers().Delete()` |
+
+**Key Features:**
+
+- Register incoming Twilio calls with ElevenLabs agents
+- Initiate outbound calls via Twilio or SIP trunks
+- Manage phone numbers associated with agents
+- Dynamic variables and prompt overrides per call
+
 ---
 
 ## Not Covered APIs
-
-### Speech-to-Speech (2 methods)
-
-Voice conversion / voice cloning in real-time.
-
-| Method | Description |
-|--------|-------------|
-| `SpeechToSpeechFull` | Convert speech using a target voice |
-| `SpeechToSpeechStream` | Stream speech conversion |
 
 ### Professional Voice Cloning - PVC (12 methods)
 
@@ -304,19 +364,12 @@ Document management and retrieval-augmented generation.
 | `DeleteRagIndex` | Delete index |
 | `RagIndexStatus` | Get index status |
 
-### Phone / Communication (13 methods)
+### WhatsApp Integration (6 methods)
 
-Phone, Twilio, SIP, and WhatsApp integration.
+WhatsApp call and messaging integration.
 
 | Method | Description |
 |--------|-------------|
-| `GetPhoneNumberRoute` | Get phone number |
-| `ListPhoneNumbersRoute` | List phone numbers |
-| `UpdatePhoneNumberRoute` | Update phone number |
-| `DeletePhoneNumberRoute` | Delete phone number |
-| `RegisterTwilioCall` | Register Twilio call |
-| `HandleTwilioOutboundCall` | Handle outbound call |
-| `HandleSipTrunkOutboundCall` | Handle SIP call |
 | `GetWhatsappAccount` | Get WhatsApp account |
 | `ListWhatsappAccounts` | List accounts |
 | `ImportWhatsappAccount` | Import account |
@@ -410,9 +463,9 @@ Advanced transcription features.
 
 Want to help expand SDK coverage? Contributions are welcome! Priority areas:
 
-1. **Speech-to-Speech** - Commonly requested feature
-2. **Voice Library** - Useful for voice discovery
-3. **Professional Voice Cloning** - Premium feature
-4. **Conversational AI** - Growing feature set
+1. **Conversational AI Agents** - Agent management and conversation APIs
+2. **Voice Library** - Community voice discovery and sharing
+3. **Professional Voice Cloning** - Premium voice training features
+4. **Knowledge Base / RAG** - Document management for agent context
 
 See the [Contributing Guide](https://github.com/agentplexus/go-elevenlabs/blob/main/CONTRIBUTING.md) for details.

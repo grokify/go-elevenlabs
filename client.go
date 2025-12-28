@@ -14,7 +14,7 @@ import (
 )
 
 // Version is the SDK version.
-const Version = "0.1.0"
+const Version = "0.3.0"
 
 // DefaultBaseURL is the default ElevenLabs API base URL.
 const DefaultBaseURL = "https://api.elevenlabs.io"
@@ -44,6 +44,13 @@ type Client struct {
 	textToDialogue  *TextToDialogueService
 	voiceDesign     *VoiceDesignService
 	music           *MusicService
+
+	// Real-time services
+	webSocketTTS   *WebSocketTTSService
+	webSocketSTT   *WebSocketSTTService
+	twilio         *TwilioService
+	phoneNumbers   *PhoneNumberService
+	speechToSpeech *SpeechToSpeechService
 }
 
 // NewClient creates a new ElevenLabs client with the given options.
@@ -103,6 +110,13 @@ func NewClient(opts ...Option) (*Client, error) {
 	c.textToDialogue = &TextToDialogueService{client: c}
 	c.voiceDesign = &VoiceDesignService{client: c}
 	c.music = &MusicService{client: c}
+
+	// Initialize real-time services
+	c.webSocketTTS = &WebSocketTTSService{client: c}
+	c.webSocketSTT = &WebSocketSTTService{client: c}
+	c.twilio = &TwilioService{client: c}
+	c.phoneNumbers = &PhoneNumberService{client: c}
+	c.speechToSpeech = &SpeechToSpeechService{client: c}
 
 	return c, nil
 }
@@ -207,6 +221,31 @@ func (c *Client) VoiceDesign() *VoiceDesignService {
 // Music returns the music composition service.
 func (c *Client) Music() *MusicService {
 	return c.music
+}
+
+// WebSocketTTS returns the WebSocket text-to-speech service for real-time streaming.
+func (c *Client) WebSocketTTS() *WebSocketTTSService {
+	return c.webSocketTTS
+}
+
+// WebSocketSTT returns the WebSocket speech-to-text service for real-time transcription.
+func (c *Client) WebSocketSTT() *WebSocketSTTService {
+	return c.webSocketSTT
+}
+
+// Twilio returns the Twilio phone integration service.
+func (c *Client) Twilio() *TwilioService {
+	return c.twilio
+}
+
+// PhoneNumbers returns the phone number management service.
+func (c *Client) PhoneNumbers() *PhoneNumberService {
+	return c.phoneNumbers
+}
+
+// SpeechToSpeech returns the speech-to-speech voice conversion service.
+func (c *Client) SpeechToSpeech() *SpeechToSpeechService {
+	return c.speechToSpeech
 }
 
 // clientOptions holds the options for creating a Client.

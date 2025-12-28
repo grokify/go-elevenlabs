@@ -12,6 +12,7 @@ Go SDK for the [ElevenLabs API](https://elevenlabs.io/).
 
 - 🗣️ **Text-to-Speech**: Convert text to realistic speech with multiple voices and models
 - 📝 **Speech-to-Text**: Transcribe audio with speaker diarization support
+- 🎙️ **Speech-to-Speech**: Voice conversion - transform speech to a different voice
 - 🔊 **Sound Effects**: Generate sound effects from text descriptions
 - 🎨 **Voice Design**: Create custom AI voices with specific characteristics
 - 🎵 **Music Composition**: Generate music from text prompts
@@ -21,6 +22,13 @@ Go SDK for the [ElevenLabs API](https://elevenlabs.io/).
 - 🌍 **Dubbing**: Translate and dub video/audio content
 - 📚 **Projects**: Manage long-form audio content (audiobooks, podcasts)
 - 📖 **Pronunciation Dictionaries**: Control pronunciation of specific terms
+
+### Real-Time Services
+
+- ⚡ **WebSocket TTS**: Low-latency text-to-speech streaming for real-time voice synthesis
+- ⚡ **WebSocket STT**: Real-time speech-to-text with partial results
+- 📞 **Twilio Integration**: Phone call integration for conversational AI agents
+- 📱 **Phone Numbers**: Manage phone numbers for voice agents
 
 ## Installation
 
@@ -251,6 +259,91 @@ project, err := client.Projects().Create(ctx, &elevenlabs.CreateProjectRequest{
 
 // Convert to audio
 err = client.Projects().Convert(ctx, project.ProjectID)
+```
+
+### Speech-to-Speech (Voice Conversion)
+
+```go
+// Convert speech from one voice to another
+f, _ := os.Open("input.mp3")
+resp, err := client.SpeechToSpeech().Convert(ctx, &elevenlabs.SpeechToSpeechRequest{
+    VoiceID: targetVoiceID,
+    Audio:   f,
+})
+
+// Simple conversion
+output, err := client.SpeechToSpeech().Simple(ctx, targetVoiceID, audioReader)
+```
+
+### WebSocket TTS (Real-Time Streaming)
+
+```go
+// Connect for low-latency TTS (ideal for LLM output)
+conn, err := client.WebSocketTTS().Connect(ctx, voiceID, &elevenlabs.WebSocketTTSOptions{
+    ModelID:                  "eleven_turbo_v2_5",
+    OutputFormat:             "pcm_16000",
+    OptimizeStreamingLatency: 3,
+})
+defer conn.Close()
+
+// Stream text as it arrives (e.g., from LLM)
+for text := range llmOutputStream {
+    conn.SendText(text)
+}
+conn.Flush()
+
+// Receive audio chunks
+for audio := range conn.Audio() {
+    // Play or save audio chunks
+}
+```
+
+### WebSocket STT (Real-Time Transcription)
+
+```go
+// Connect for live transcription
+conn, err := client.WebSocketSTT().Connect(ctx, &elevenlabs.WebSocketSTTOptions{
+    SampleRate:     16000,
+    EnablePartials: true,
+})
+defer conn.Close()
+
+// Send audio chunks
+go func() {
+    for audioChunk := range microphoneInput {
+        conn.SendAudio(audioChunk)
+    }
+    conn.EndStream()
+}()
+
+// Receive transcripts
+for transcript := range conn.Transcripts() {
+    if transcript.IsFinal {
+        fmt.Println("Final:", transcript.Text)
+    } else {
+        fmt.Println("Partial:", transcript.Text)
+    }
+}
+```
+
+### Twilio Integration (Phone Calls)
+
+```go
+// Register incoming Twilio call with an ElevenLabs agent
+resp, err := client.Twilio().RegisterCall(ctx, &elevenlabs.TwilioRegisterCallRequest{
+    AgentID: "your-agent-id",
+})
+// Return resp.TwiML to Twilio webhook
+
+// Make outbound call
+call, err := client.Twilio().OutboundCall(ctx, &elevenlabs.TwilioOutboundCallRequest{
+    AgentID:            "your-agent-id",
+    AgentPhoneNumberID: "phone-number-id",
+    ToNumber:           "+1234567890",
+})
+
+// List phone numbers
+numbers, err := client.PhoneNumbers().List(ctx)
 ```
 
 ## Error Handling

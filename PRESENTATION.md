@@ -150,12 +150,13 @@ Our goal was to build a comprehensive Go SDK wrapping the ElevenLabs API. <break
 
 - **Text-to-Speech** - Convert text to realistic speech with multiple voices
 - **Speech-to-Text** - Transcribe audio with speaker diarization
+- **Speech-to-Speech** - Voice conversion in real-time
 - **Sound Effects** - Generate sound effects from text descriptions
 - **Music Composition** - Generate music from text prompts
 - **Voice Design** - Create custom AI voices with specific characteristics
-- **Dubbing** - Translate and dub video/audio content
+- **Real-Time APIs** - WebSocket streaming + Twilio phone integration
 
-**Goal**: Build a comprehensive Go SDK wrapping the ElevenLabs API
+**Goal**: Build a comprehensive Go SDK for AI audio and voice agents
 
 ---
 
@@ -177,15 +178,15 @@ We wrote 37 Go source files with about 6,000 lines of handwritten code. <break t
 | Category | Services |
 |----------|----------|
 | **Core Audio** | Text-to-Speech, Speech-to-Text, Sound Effects, Music |
-| **Voice Management** | Voices, Voice Design, Models |
+| **Voice** | Voices, Voice Design, Models, Speech-to-Speech |
 | **Processing** | Audio Isolation, Forced Alignment, Text-to-Dialogue |
 | **Content** | Projects, Pronunciation, Dubbing |
+| **Real-Time** | WebSocket TTS, WebSocket STT, Twilio, Phone Numbers |
 | **Utility** | History, User |
-| **Packages** | `ttsscript`, `voices` + mogo `retryhttp` |
 
 **OpenAPI Spec**: 204 operations (~54K lines) | **Generated Code**: ~330K lines
 
-**Output**: 40+ Go source files (~7K lines handwritten) + 19 test files
+**Output**: 44+ Go source files (~8K lines handwritten) + 19 test files
 
 ---
 
@@ -205,18 +206,16 @@ And the examples directory has usage examples. <break time="800ms"/>
 go-elevenlabs/
 ├── client.go              # Main client with service accessors
 ├── texttospeech.go        # Text-to-Speech service wrapper
-├── speechtotext.go        # Speech-to-Text service wrapper
+├── speechtotext.go        # Speech-to-Text + real-time STT
+├── speechtospeech.go      # Voice conversion service
+├── websockettts.go        # Real-time TTS streaming
+├── websocketstt.go        # Real-time STT streaming
+├── twilio.go              # Twilio + phone integration
 ├── music.go               # Music composition + stem separation
-├── errors.go              # Error types and helpers
 ├── ttsscript/             # TTS script authoring package
-│   ├── script.go          # Script, Slide, Segment types
-│   ├── compiler.go        # Compilation with pronunciations
-│   ├── ssml.go            # SSML output formatter
-│   └── elevenlabs.go      # ElevenLabs output formatter
 ├── voices/                # Voice reference package
-│   └── voices.go          # Voice constants and metadata
 ├── internal/api/          # ogen-generated API client (~330K lines)
-└── docsrc/                # MkDocs documentation site (28 pages)
+└── docsrc/                # MkDocs documentation site (32 pages)
 ```
 
 ---
@@ -288,7 +287,7 @@ Models for available AI models. <break time="400ms"/>
 And User for account information. <break time="800ms"/>
 -->
 
-# 15 Services Implemented ✨
+# 19 Services Implemented ✨
 
 <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem; font-size: 0.85em;">
 <div>
@@ -309,6 +308,7 @@ And User for account information. <break time="800ms"/>
 - Voices
 - Voice Design
 - Models
+- Speech-to-Speech
 
 **Processing**
 - Audio Isolation
@@ -317,14 +317,16 @@ And User for account information. <break time="800ms"/>
 </div>
 <div>
 
-**Content**
-- Projects (Studio)
-- Dubbing
-- Pronunciation
+**Real-Time**
+- WebSocket TTS ⚡
+- WebSocket STT ⚡
+- Twilio Integration
+- Phone Numbers
 
-**Utility**
-- History
-- User
+**Content**
+- Projects, Dubbing
+- Pronunciation
+- History, User
 
 </div>
 </div>
@@ -347,15 +349,15 @@ We created a detailed coverage page in the documentation. <break time="800ms"/>
 
 | Coverage | Categories | Methods |
 |----------------|------------|---------|
-| **Full** ✓ | TTS, STT, Voices, Models, History, User, SFX, Alignment, Isolation, Dialogue, Music, Pronunciation | ~50 |
-| **Partial** ✓ | Voice Design, Projects, Dubbing | ~15 |
-| **Not Covered** ✗ | S2S, PVC, ConvAI, Knowledge Base, Phone, Workspace, MCP | ~139 |
+| **Full** ✓ | TTS, STT, S2S, Voices, Models, History, User, SFX, Alignment, Isolation, Dialogue, Music, Pronunciation | ~55 |
+| **Partial** ✓ | Voice Design, Projects, Dubbing, Phone/Twilio | ~20 |
+| **Not Covered** ✗ | PVC, ConvAI, Knowledge Base, Workspace, MCP | ~129 |
 
 ### Coverage Highlights
-- **Core audio features**: Fully covered (including Music)
-- **Voice management**: Fully covered
-- **Pronunciation dictionaries**: Fully covered
-- **Enterprise features**: Not yet covered (Conversational AI, Workspace)
+- **Core audio features**: Fully covered (TTS, STT, Music, S2S)
+- **Real-time streaming**: WebSocket TTS + STT for voice agents
+- **Phone integration**: Twilio calls + phone number management
+- **Enterprise features**: Not yet covered (Conversational AI agents)
 
 **Documentation**: Full coverage page with method-level details
 
@@ -666,11 +668,11 @@ The entire SDK was built iteratively over multiple sessions. <break time="800ms"
 
 | Category | Count |
 |----------|-------|
-| **Go Source Files** | 40+ |
-| **Handwritten Code** | ~7K lines |
+| **Go Source Files** | 44+ |
+| **Handwritten Code** | ~8K lines |
 | **Test Files** | 19 |
-| **Doc Pages** | 28 |
-| **Services** | 15 |
+| **Doc Pages** | 32 |
+| **Services** | 19 |
 | **Utility Packages** | 2 (+mogo) |
 
 </div></div>
@@ -818,12 +820,12 @@ All deliverables are available in the repository. <break time="800ms"/>
 
 | Deliverable | Status |
 |-------------|--------|
-| 15 Service Wrappers | ✅ Complete |
+| 19 Service Wrappers | ✅ Complete |
+| Real-Time Services | ✅ WebSocket TTS/STT, Twilio |
 | ogen API Client | ✅ Complete (204 methods) |
-| Test Suite | ✅ Complete (17 test files) |
-| MkDocs Documentation | ✅ Complete (25 pages) |
+| Test Suite | ✅ Complete (19 test files) |
+| MkDocs Documentation | ✅ Complete (32 pages) |
 | API Coverage Page | ✅ Complete |
-| CI/CD Pipeline | ✅ Complete |
 
 **Repository**: `github.com/agentplexus/go-elevenlabs`
 
@@ -846,11 +848,11 @@ The SDK is released under the MIT License. <break time="800ms"/>
 
 ### Priority APIs to Add
 
-- **Speech-to-Speech**: Voice conversion in real-time
-- **Professional Voice Cloning**: Train custom voices
-- **Voice Library**: Discover community voices
-- **Conversational AI**: Agent interactions
-- **Workspace Management**: Enterprise features
+- **Conversational AI Agents**: Full agent management and conversations
+- **Professional Voice Cloning**: Train custom voices with samples
+- **Voice Library**: Discover and share community voices
+- **Knowledge Base / RAG**: Document management for agent context
+- **Workspace Management**: Enterprise team features
 
 ### Community
 

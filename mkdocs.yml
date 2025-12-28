@@ -1,5 +1,5 @@
 site_name: go-elevenlabs
-site_description: Go SDK for ElevenLabs Text-to-Speech API
+site_description: Go SDK for ElevenLabs AI Audio API
 site_author: AgentPlexus
 site_url: https://agentplexus.github.io/go-elevenlabs/
 
@@ -59,6 +59,7 @@ nav:
   - Services:
     - Text-to-Speech: services/text-to-speech.md
     - Speech-to-Text: services/speech-to-text.md
+    - Speech-to-Speech: services/speech-to-speech.md
     - Voices: services/voices.md
     - Voice Design: services/voice-design.md
     - Sound Effects: services/sound-effects.md
@@ -72,6 +73,10 @@ nav:
     - History: services/history.md
     - Models: services/models.md
     - User: services/user.md
+  - Real-Time:
+    - WebSocket TTS: services/websocket-tts.md
+    - WebSocket STT: services/websocket-stt.md
+    - Twilio Integration: services/twilio.md
   - Guides:
     - LMS/Udemy Courses: guides/lms-courses.md
     - Pronunciation Rules: guides/pronunciation-rules.md
@@ -84,4 +89,8 @@ nav:
     - Client: api/client.md
     - Errors: api/errors.md
     - Coverage: api/coverage.md
+  - Releases:
+    - v0.3.0 (Latest): releases/v0.3.0.md
+    - v0.2.0: releases/v0.2.0.md
+    - v0.1.0: releases/v0.1.0.md
   - Examples: examples.md

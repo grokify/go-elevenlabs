@@ -45,6 +45,18 @@
          <lastmod>2025-12-28</lastmod>
     </url>
     <url>
+         <loc>https://agentplexus.github.io/go-elevenlabs/releases/v0.1.0/</loc>
+         <lastmod>2025-12-28</lastmod>
+    </url>
+    <url>
+         <loc>https://agentplexus.github.io/go-elevenlabs/releases/v0.2.0/</loc>
+         <lastmod>2025-12-28</lastmod>
+    </url>
+    <url>
+         <loc>https://agentplexus.github.io/go-elevenlabs/releases/v0.3.0/</loc>
+         <lastmod>2025-12-28</lastmod>
+    </url>
+    <url>
          <loc>https://agentplexus.github.io/go-elevenlabs/services/audio-isolation/</loc>
          <lastmod>2025-12-28</lastmod>
     </url>
@@ -81,6 +93,10 @@
          <lastmod>2025-12-28</lastmod>
     </url>
     <url>
+         <loc>https://agentplexus.github.io/go-elevenlabs/services/speech-to-speech/</loc>
+         <lastmod>2025-12-28</lastmod>
+    </url>
+    <url>
          <loc>https://agentplexus.github.io/go-elevenlabs/services/speech-to-text/</loc>
          <lastmod>2025-12-28</lastmod>
     </url>
@@ -93,6 +109,10 @@
          <lastmod>2025-12-28</lastmod>
     </url>
     <url>
+         <loc>https://agentplexus.github.io/go-elevenlabs/services/twilio/</loc>
+         <lastmod>2025-12-28</lastmod>
+    </url>
+    <url>
          <loc>https://agentplexus.github.io/go-elevenlabs/services/user/</loc>
          <lastmod>2025-12-28</lastmod>
     </url>
@@ -102,6 +122,14 @@
     </url>
     <url>
          <loc>https://agentplexus.github.io/go-elevenlabs/services/voices/</loc>
+         <lastmod>2025-12-28</lastmod>
+    </url>
+    <url>
+         <loc>https://agentplexus.github.io/go-elevenlabs/services/websocket-stt/</loc>
+         <lastmod>2025-12-28</lastmod>
+    </url>
+    <url>
+         <loc>https://agentplexus.github.io/go-elevenlabs/services/websocket-tts/</loc>
          <lastmod>2025-12-28</lastmod>
     </url>
     <url>

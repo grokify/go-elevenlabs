@@ -1,16 +1,25 @@
 # go-elevenlabs
 
-A Go SDK for the [ElevenLabs](https://elevenlabs.io/) Text-to-Speech API.
+A Go SDK for the [ElevenLabs](https://elevenlabs.io/) AI Audio API.
 
 ## Features
 
 - **Text-to-Speech** - Generate natural-sounding speech from text
+- **Speech-to-Text** - Transcribe audio with speaker diarization
+- **Speech-to-Speech** - Voice conversion to transform any voice
 - **Voice Selection** - Access pre-made and cloned voices
 - **Sound Effects** - Generate sound effects from text descriptions
+- **Music Composition** - Generate music from text prompts
 - **Projects (Studio)** - Create long-form content with chapters
 - **Pronunciation Dictionaries** - Ensure correct pronunciation of technical terms
 - **Dubbing** - Translate audio/video to other languages
-- **History** - Access and manage generated audio history
+
+### Real-Time Services
+
+- **WebSocket TTS** - Low-latency streaming text-to-speech for LLM integration
+- **WebSocket STT** - Real-time speech-to-text with partial results
+- **Twilio Integration** - Phone call integration for voice agents
+- **Phone Numbers** - Manage phone numbers for conversational AI
 
 ## Installation
 
@@ -52,11 +61,13 @@ func main() {
 
 This SDK is particularly well-suited for:
 
+- **Voice Agents** - Build conversational AI agents with real-time TTS/STT
+- **Phone Integration** - Create voice bots with Twilio phone calls
 - **Online Courses** - Generate professional narration for Udemy, LMS platforms
 - **Audiobooks** - Create chapter-organized audio content
 - **Podcasts** - Produce consistent, high-quality audio
 - **Video Production** - Add voiceovers and sound effects
-- **Accessibility** - Convert text content to audio format
+- **LLM Applications** - Stream text from LLMs directly to speech
 
 ## Documentation
 
